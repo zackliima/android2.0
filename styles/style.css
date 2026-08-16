@@ -196,7 +196,7 @@ main {
     flex-flow: column nowrap;
     gap: 20px;
     padding: 1rem 0;
-    margin: 1rem 1rem;
+    margin: .5rem;
     justify-content: center;
     background-color: var(--bg-section);
     border-radius: 10px;
@@ -207,7 +207,6 @@ main {
 .icon-title {
     display: inline-flex;
     justify-content: space-between;
-    font-size: 0.75em;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -240,12 +239,24 @@ main {
 }
 
 article > div > h1 {
+    font-size: clamp(1.25rem, 1.05rem + 1vw, 1.6rem);
+    text-align: right;
     font-family: "idroid", "Michroma", "Bruno Ace SC", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-article > div > h2, .content-aside > div > h3 {
+article > div > h2 {
+    font-size: clamp(1.05rem, .92rem + .65vw, 1.3rem);
+    text-align: right;
+    font-family: "Michroma", "Bruno Ace SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.content-aside > div > h3 {
+    font-size: clamp(.98rem, .9rem + .4vw, 1.15rem);
+    text-align: right;
     font-family: "Michroma", "Bruno Ace SC", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -343,16 +354,18 @@ main a:hover {
 .content-aside > article > ul {
     display: flex;
     flex-flow: column wrap;
-    height: 180px;
+    min-height: 180px;
+    max-height: 200px;
     align-content: space-around;
     list-style: none;
-    font-size: 0.8em;
+    font-size: clamp(.7rem, .8rem, 1.1rem);
     font-weight: bold;
     line-height: 2;
+    overflow: hidden;
 }
 
 .check-list {
-    font-size: 1.25em;
+    font-size: .8rem;
     color: var(--primary);
     margin: 0 5px;
 }
@@ -360,18 +373,18 @@ main a:hover {
 .curiosity-aside {
     display: flex;
     gap: 10px;
-    font-size: 0.8em;
+    font-size: .95rem;
     background-color: var(--bg-section);
     border-radius: 8px;
     margin: 15px;
     padding: 10px;
     border: 1px solid var(--border);
-    line-height: 1.25em;
+    line-height: 1.25;
 }
 
 
 .curiosity-aside > .icon-info {
-    font-size: 1.5em;
+    font-size: 1rem;
     color: var(--primary);
     margin-top: 2.5px;
 }
@@ -387,7 +400,7 @@ main a:hover {
 }
 
 .content-video {
-    margin: 1rem;
+    margin: .5rem;
     border-radius: 10px;
     border: 1px solid var(--border);
     box-shadow: 0 8px 20px var(--shadow);

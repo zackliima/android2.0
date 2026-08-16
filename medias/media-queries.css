@@ -43,6 +43,18 @@
         margin: 0 2vw 1rem 2vw;
     }
 
+    article > div > h1 {
+        font-size: clamp(1.6rem, .9rem + 1.45vw, 2rem);
+    }
+
+    article > div > h2 {
+        font-size: clamp(1.3rem, .82rem + 1vw, 1.6rem);
+    }
+
+    .content-aside > div > h3 {
+        font-size: clamp(1.15rem, .82rem + .7vw, 1.35rem);
+    }
+
     /* End of Main */
 }
 
@@ -163,6 +175,18 @@
 
     aside > .content-aside > .icon-title {
         margin: 0;
+    }
+
+    article > div > h1 {
+        font-size: clamp(2rem, 1.33rem + .89vw, 2.4rem);
+    }
+
+    article > div > h2 {
+        font-size: clamp(1.6rem, 1.18rem + .56vw, 1.85rem);
+    }
+
+    .content-aside > div > h3 {
+        font-size: clamp(1.35rem, 1.1rem + .33vw, 1.5rem);
     }
 
     .content-aside > article > p {
