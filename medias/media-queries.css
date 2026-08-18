@@ -66,7 +66,7 @@
     }
 
     .hero {
-        background: url(../images/background-hero-desktop.png) center center no-repeat scroll;
+        background: url(../images/background-hero-desktop.webp) center center no-repeat scroll;
         background-size: cover;
     }
 
