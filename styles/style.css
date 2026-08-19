@@ -88,7 +88,7 @@ header {
 
 .logo > img {
     height: 40px;
-    width: 40px;
+    width: auto;
 }
 
 nav ul {
@@ -292,7 +292,7 @@ article > div > img {
 
 .image-parallax {
     position: relative;
-    background-image: url(../images/image-parallax.png);
+    background-image: url(../images/image-parallax.webp);
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
