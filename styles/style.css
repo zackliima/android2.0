@@ -40,7 +40,7 @@
 
 html {
         background-color: var(--bg-dark);
-        scroll-behavior: auto;
+        scroll-behavior: smooth;
     }
 
 body {
