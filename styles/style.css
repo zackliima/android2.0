@@ -1,17 +1,17 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Michroma&display=swap');
-
 @font-face {
     font-family: "idroid";
     src: url(../fonts/idroid-font/Idroid-0rod.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease;
 }
 
 :root {
@@ -39,12 +39,12 @@
 }
 
 html {
-    background-color: var(--bg-dark);
-    scroll-behavior: smooth;
-}
+        background-color: var(--bg-dark);
+        scroll-behavior: auto;
+    }
 
 body {
-    font-family: "Lato", Georgia, 'Times New Roman', Times, serif;
+    font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: var(--text);
@@ -129,6 +129,10 @@ header a:hover::after {
     transform: scaleX(1);
 }
 
+header a:focus-visible::after {
+    transform: scaleX(1);
+}
+
 .logo span,
 nav span,
 .actions span {
@@ -205,9 +209,8 @@ main {
 }
 
 .icon-title {
-    display: inline-flex;
-    justify-content: space-between;
     display: flex;
+    justify-content: space-between;
     flex-flow: row nowrap;
     align-items: center;
     padding: .8rem 1rem;
@@ -238,26 +241,26 @@ main {
     line-height: 1.6;
 }
 
-article > div > h1 {
+.title-history {
     font-size: clamp(1.25rem, 1.05rem + 1vw, 1.6rem);
     text-align: right;
-    font-family: "idroid", "Michroma", "Bruno Ace SC", sans-serif;
+    font-family: "idroid", "Michroma", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-article > div > h2 {
+.title-topic {
     font-size: clamp(1.05rem, .92rem + .65vw, 1.3rem);
     text-align: right;
-    font-family: "Michroma", "Bruno Ace SC", sans-serif;
+    font-family: "Michroma", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-.content-aside > div > h3 {
+.title-aside {
     font-size: clamp(.98rem, .9rem + .4vw, 1.15rem);
     text-align: right;
-    font-family: "Michroma", "Bruno Ace SC", sans-serif;
+    font-family: "Michroma", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -287,7 +290,6 @@ article > div > img {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
 }
 
 .image-parallax {
@@ -328,6 +330,10 @@ main a {
     padding: 2px 8px;
     border-radius: 15px;
     transform: translateY(-2px);
+    transition: 
+        background-color .3s ease, 
+        color .3s ease, 
+        transform .3s ease;
 }
 
 main a:hover {
@@ -335,6 +341,11 @@ main a:hover {
     color: var(--text-white);
     text-decoration: underline;
     transform: translateY(2px);
+}
+
+header a:focus-visible, main a:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 4px;
 }
 
 /* End of Main > Section and Article */
@@ -358,7 +369,7 @@ main a:hover {
     max-height: 200px;
     align-content: space-around;
     list-style: none;
-    font-size: clamp(.7rem, .8rem, 1.1rem);
+    font-size: .8rem;
     font-weight: bold;
     line-height: 2;
     overflow: hidden;
@@ -435,6 +446,11 @@ main a:hover {
     border-radius: 6px;
 }
 
+.video iframe:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 4px;
+}
+
 /* End of Main > Aside */
 
 /* Start of Footer */
@@ -488,6 +504,23 @@ footer > p > small {
 
 /* End of Footer */
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    header a::after,
+    main a,
+    .actions span {
+        transition: none;
+    }
+
+    main a:hover,
+    .actions span:hover {
+        transform: none;
+    }
+}
+
 /* iOS PARALLAX FIX */
 
 @supports (-webkit-touch-callout: none) {
@@ -496,3 +529,5 @@ footer > p > small {
         background-position: center;
     }
 }
+
+/* FIXED */
