@@ -7,14 +7,10 @@
     <meta name="description" content="Explore the history of Android, from the original Dandroids to Bugdroid, the mascot designed by Irina Blok, plus Android version codenames and curiosities.">
     <link rel="canonical" href="https://zackliima.github.io/android2.0/">
     <link rel="shortcut icon" href="images/android-project-icon.ico" type="image/x-icon">
-    <link rel="preload" href="images/background-hero-mobile.webp" as="image" type="image/webp" media="max-width: 1023px" fetchpriority="high">
-    <link rel="preload" href="images/background-hero-desktop.webp" as="image" type="image/webp" media="min-width: 1024px" fetchpriority="high">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Michroma&display=swap">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="medias/media-queries.css">
     <script defer src="https://kit.fontawesome.com/6ae0d09a9e.js" crossorigin="anonymous"></script>
+    <script defer src="scripts/youtube.facade.js"></script>
 </head>
 <body>
     <header>
@@ -38,10 +34,27 @@
 
     <main>
         <section class="hero">
+            <picture class="hero-background" aria-hidden="true">
+                <source 
+                    media="(min-width: 1024px)"
+                    srcset="images/background-hero-desktop.webp"
+                    type="image/webp"
+                >
+
+                <img 
+                    src="images/background-hero-mobile.webp"
+                    width="1200"
+                    height="675"
+                    alt=""
+                    fetchpriority="high"
+                >
+            </picture>
+            
             <div class="hero-content">
                 <h1>Curiosities About <span class="word-green">Technologies</span></h1>
                 <p>Everything you've always wanted to know about the <span class="word-green">Tech</span> world, all in one place.</p>
             </div>
+            
             <svg class="hero-wave" xmlns='http://www.w3.org/2000/svg' viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
                 <path d='
                     M0 60
@@ -141,15 +154,12 @@
             </section>
 
             <section class="content-video">
-                    <div class="video">
-                        <iframe
-                            src="https://www.youtube.com/embed/l2UDgpLz20M?si=b70qDZkgzU0g_jI9" 
-                            title="YouTube video player"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
+                    <div class="video video-facade" data-video-id="l2UDgpLz20M">
+                        <button class="video-facade-button" type="button" aria-label="Play Android history video">
+                            <img src="images/android-history-video.webp" width="1280" height="720" loading="lazy" alt="">
+                            
+                            <span class="video-play-button" aria-hidden="true"></span>
+                        </button>
                     </div>
             </section>
         </aside>
